@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>listar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h1>Buscar por ID de Vehiculo</h1>
+  <ion-label>Ingrese el nombre:</ion-label>
+  <ion-item>
+  <ion-input [(ngModel)]="vehiculoB.Marca"></ion-input>
+  <ion-button (click)="Buscar()">Buscar</ion-button>
+  </ion-item>
+
+  <ion-list >
+    <br>
+     <ion-item  *ngFor="let v of vehiculo | async">
+      <ion-label (click)="showMenu(bd.Nombre,bd.Telefono)">
+        <h1>{{v.Marca}}</h1>
+        <h2>{{v.vid}}</h2>
+        <h3>{{v.Color}}</h3>
+        <p>{{v.Anio}}</p>
+      </ion-label>
+      <ion-button (click)="actualiza(p)"  expand="block" fill="outline">Editar</ion-button>
+    </ion-item>
+
+  </ion-list>
+
+  <h1>Vehiculo Encontrado</h1>
+  <div>
+    <ion-label>Nombre:</ion-label>
+    <p>{{vehiculoB.Marca}}</p>
+    <p>{{vehiculoB.vid}}</p>
+    <p>{{vehiculoB.Color}}</p>
+    <p>{{vehiculoB.Anio}}</p>
+  </div>
+
+</ion-content>

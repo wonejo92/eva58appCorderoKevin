@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>crear</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label>Marca</ion-label>
+    <ion-input [(ngModel)]="vehiculo.Marca"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Año</ion-label>
+    <ion-input  [(ngModel)]="vehiculo.Anio"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Color</ion-label>
+    <ion-input  [(ngModel)]="vehiculo.Color"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Kilometraje</ion-label>
+    <ion-input  [(ngModel)]="vehiculo.Km"></ion-input>
+  </ion-item>
+
+
+  <ion-button (click)="Guardar()">Guardar Vehiculo</ion-button>
+
+  <ion-button color="danger"> Upload Image
+    <input type="file" accept="image/*" (change)="fileUpload($event)" />
+  </ion-button>
+
+  <div>
+    <label for="">iMAGEN</label>
+    <img [src]="imagen" alt="">
+  </div>
+
+
+</ion-content>
